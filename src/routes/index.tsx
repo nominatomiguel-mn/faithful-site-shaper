@@ -379,12 +379,14 @@ function Home() {
                   Notas, frequência, comunicados, calendário e financeiro em um só lugar.
                 </p>
               </div>
-              <Link
-                to="/apoio-aos-pais"
+              <a
+                href="https://apoioaospais.com.br/login.php"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-orange px-7 py-3.5 font-bold text-orange-foreground shadow-orange transition-transform hover:scale-[1.04]"
               >
                 Acesse o portal <ArrowRight className="h-4 w-4" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
