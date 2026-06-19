@@ -35,7 +35,7 @@ function Page() {
               <div className="rounded-2xl bg-muted p-5">
                 <Clock className="h-5 w-5 text-green" />
                 <p className="mt-2 text-xs uppercase tracking-widest text-muted-foreground">Período</p>
-                <p className="font-display text-lg font-bold text-primary">Manhã / Tarde</p>
+                <p className="font-display text-lg font-bold text-primary">Manhã&nbsp;</p>
               </div>
             </div>
           </div>
