@@ -587,7 +587,7 @@ function Home() {
       </section>
 
       {/* TRABALHE CONOSCO */}
-      <section className="bg-muted/40 py-16">
+      <section id="trabalhe-conosco" className="bg-muted/40 py-16 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <div className="mb-8 flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <Briefcase className="h-4 w-4 text-primary" />
