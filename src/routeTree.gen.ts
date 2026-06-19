@@ -9,38 +9,250 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as NoticiasRouteImport } from './routes/noticias'
+import { Route as MatriculaRouteImport } from './routes/matricula'
+import { Route as EspacoRouteImport } from './routes/espaco'
+import { Route as EnsinoRouteImport } from './routes/ensino'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as CocRouteImport } from './routes/coc'
+import { Route as ApoioAosPaisRouteImport } from './routes/apoio-aos-pais'
+import { Route as AEscolaRouteImport } from './routes/a-escola'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as EnsinoMedioRouteImport } from './routes/ensino.medio'
+import { Route as EnsinoInfantilRouteImport } from './routes/ensino.infantil'
+import { Route as EnsinoFundamentalIiRouteImport } from './routes/ensino.fundamental-ii'
+import { Route as EnsinoFundamentalIRouteImport } from './routes/ensino.fundamental-i'
 
+const NoticiasRoute = NoticiasRouteImport.update({
+  id: '/noticias',
+  path: '/noticias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MatriculaRoute = MatriculaRouteImport.update({
+  id: '/matricula',
+  path: '/matricula',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EspacoRoute = EspacoRouteImport.update({
+  id: '/espaco',
+  path: '/espaco',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnsinoRoute = EnsinoRouteImport.update({
+  id: '/ensino',
+  path: '/ensino',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CocRoute = CocRouteImport.update({
+  id: '/coc',
+  path: '/coc',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApoioAosPaisRoute = ApoioAosPaisRouteImport.update({
+  id: '/apoio-aos-pais',
+  path: '/apoio-aos-pais',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AEscolaRoute = AEscolaRouteImport.update({
+  id: '/a-escola',
+  path: '/a-escola',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EnsinoMedioRoute = EnsinoMedioRouteImport.update({
+  id: '/medio',
+  path: '/medio',
+  getParentRoute: () => EnsinoRoute,
+} as any)
+const EnsinoInfantilRoute = EnsinoInfantilRouteImport.update({
+  id: '/infantil',
+  path: '/infantil',
+  getParentRoute: () => EnsinoRoute,
+} as any)
+const EnsinoFundamentalIiRoute = EnsinoFundamentalIiRouteImport.update({
+  id: '/fundamental-ii',
+  path: '/fundamental-ii',
+  getParentRoute: () => EnsinoRoute,
+} as any)
+const EnsinoFundamentalIRoute = EnsinoFundamentalIRouteImport.update({
+  id: '/fundamental-i',
+  path: '/fundamental-i',
+  getParentRoute: () => EnsinoRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/a-escola': typeof AEscolaRoute
+  '/apoio-aos-pais': typeof ApoioAosPaisRoute
+  '/coc': typeof CocRoute
+  '/contato': typeof ContatoRoute
+  '/ensino': typeof EnsinoRouteWithChildren
+  '/espaco': typeof EspacoRoute
+  '/matricula': typeof MatriculaRoute
+  '/noticias': typeof NoticiasRoute
+  '/ensino/fundamental-i': typeof EnsinoFundamentalIRoute
+  '/ensino/fundamental-ii': typeof EnsinoFundamentalIiRoute
+  '/ensino/infantil': typeof EnsinoInfantilRoute
+  '/ensino/medio': typeof EnsinoMedioRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/a-escola': typeof AEscolaRoute
+  '/apoio-aos-pais': typeof ApoioAosPaisRoute
+  '/coc': typeof CocRoute
+  '/contato': typeof ContatoRoute
+  '/ensino': typeof EnsinoRouteWithChildren
+  '/espaco': typeof EspacoRoute
+  '/matricula': typeof MatriculaRoute
+  '/noticias': typeof NoticiasRoute
+  '/ensino/fundamental-i': typeof EnsinoFundamentalIRoute
+  '/ensino/fundamental-ii': typeof EnsinoFundamentalIiRoute
+  '/ensino/infantil': typeof EnsinoInfantilRoute
+  '/ensino/medio': typeof EnsinoMedioRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/a-escola': typeof AEscolaRoute
+  '/apoio-aos-pais': typeof ApoioAosPaisRoute
+  '/coc': typeof CocRoute
+  '/contato': typeof ContatoRoute
+  '/ensino': typeof EnsinoRouteWithChildren
+  '/espaco': typeof EspacoRoute
+  '/matricula': typeof MatriculaRoute
+  '/noticias': typeof NoticiasRoute
+  '/ensino/fundamental-i': typeof EnsinoFundamentalIRoute
+  '/ensino/fundamental-ii': typeof EnsinoFundamentalIiRoute
+  '/ensino/infantil': typeof EnsinoInfantilRoute
+  '/ensino/medio': typeof EnsinoMedioRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/a-escola'
+    | '/apoio-aos-pais'
+    | '/coc'
+    | '/contato'
+    | '/ensino'
+    | '/espaco'
+    | '/matricula'
+    | '/noticias'
+    | '/ensino/fundamental-i'
+    | '/ensino/fundamental-ii'
+    | '/ensino/infantil'
+    | '/ensino/medio'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/a-escola'
+    | '/apoio-aos-pais'
+    | '/coc'
+    | '/contato'
+    | '/ensino'
+    | '/espaco'
+    | '/matricula'
+    | '/noticias'
+    | '/ensino/fundamental-i'
+    | '/ensino/fundamental-ii'
+    | '/ensino/infantil'
+    | '/ensino/medio'
+  id:
+    | '__root__'
+    | '/'
+    | '/a-escola'
+    | '/apoio-aos-pais'
+    | '/coc'
+    | '/contato'
+    | '/ensino'
+    | '/espaco'
+    | '/matricula'
+    | '/noticias'
+    | '/ensino/fundamental-i'
+    | '/ensino/fundamental-ii'
+    | '/ensino/infantil'
+    | '/ensino/medio'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AEscolaRoute: typeof AEscolaRoute
+  ApoioAosPaisRoute: typeof ApoioAosPaisRoute
+  CocRoute: typeof CocRoute
+  ContatoRoute: typeof ContatoRoute
+  EnsinoRoute: typeof EnsinoRouteWithChildren
+  EspacoRoute: typeof EspacoRoute
+  MatriculaRoute: typeof MatriculaRoute
+  NoticiasRoute: typeof NoticiasRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/noticias': {
+      id: '/noticias'
+      path: '/noticias'
+      fullPath: '/noticias'
+      preLoaderRoute: typeof NoticiasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/matricula': {
+      id: '/matricula'
+      path: '/matricula'
+      fullPath: '/matricula'
+      preLoaderRoute: typeof MatriculaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/espaco': {
+      id: '/espaco'
+      path: '/espaco'
+      fullPath: '/espaco'
+      preLoaderRoute: typeof EspacoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ensino': {
+      id: '/ensino'
+      path: '/ensino'
+      fullPath: '/ensino'
+      preLoaderRoute: typeof EnsinoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coc': {
+      id: '/coc'
+      path: '/coc'
+      fullPath: '/coc'
+      preLoaderRoute: typeof CocRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/apoio-aos-pais': {
+      id: '/apoio-aos-pais'
+      path: '/apoio-aos-pais'
+      fullPath: '/apoio-aos-pais'
+      preLoaderRoute: typeof ApoioAosPaisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/a-escola': {
+      id: '/a-escola'
+      path: '/a-escola'
+      fullPath: '/a-escola'
+      preLoaderRoute: typeof AEscolaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +260,65 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ensino/medio': {
+      id: '/ensino/medio'
+      path: '/medio'
+      fullPath: '/ensino/medio'
+      preLoaderRoute: typeof EnsinoMedioRouteImport
+      parentRoute: typeof EnsinoRoute
+    }
+    '/ensino/infantil': {
+      id: '/ensino/infantil'
+      path: '/infantil'
+      fullPath: '/ensino/infantil'
+      preLoaderRoute: typeof EnsinoInfantilRouteImport
+      parentRoute: typeof EnsinoRoute
+    }
+    '/ensino/fundamental-ii': {
+      id: '/ensino/fundamental-ii'
+      path: '/fundamental-ii'
+      fullPath: '/ensino/fundamental-ii'
+      preLoaderRoute: typeof EnsinoFundamentalIiRouteImport
+      parentRoute: typeof EnsinoRoute
+    }
+    '/ensino/fundamental-i': {
+      id: '/ensino/fundamental-i'
+      path: '/fundamental-i'
+      fullPath: '/ensino/fundamental-i'
+      preLoaderRoute: typeof EnsinoFundamentalIRouteImport
+      parentRoute: typeof EnsinoRoute
+    }
   }
 }
 
+interface EnsinoRouteChildren {
+  EnsinoFundamentalIRoute: typeof EnsinoFundamentalIRoute
+  EnsinoFundamentalIiRoute: typeof EnsinoFundamentalIiRoute
+  EnsinoInfantilRoute: typeof EnsinoInfantilRoute
+  EnsinoMedioRoute: typeof EnsinoMedioRoute
+}
+
+const EnsinoRouteChildren: EnsinoRouteChildren = {
+  EnsinoFundamentalIRoute: EnsinoFundamentalIRoute,
+  EnsinoFundamentalIiRoute: EnsinoFundamentalIiRoute,
+  EnsinoInfantilRoute: EnsinoInfantilRoute,
+  EnsinoMedioRoute: EnsinoMedioRoute,
+}
+
+const EnsinoRouteWithChildren =
+  EnsinoRoute._addFileChildren(EnsinoRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AEscolaRoute: AEscolaRoute,
+  ApoioAosPaisRoute: ApoioAosPaisRoute,
+  CocRoute: CocRoute,
+  ContatoRoute: ContatoRoute,
+  EnsinoRoute: EnsinoRouteWithChildren,
+  EspacoRoute: EspacoRoute,
+  MatriculaRoute: MatriculaRoute,
+  NoticiasRoute: NoticiasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
