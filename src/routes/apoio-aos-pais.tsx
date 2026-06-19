@@ -39,7 +39,7 @@ function Page() {
           })}
         </div>
         <div className="mt-12 text-center">
-          <a href="https://apoioaospais.com.br/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-orange px-7 py-3.5 font-bold text-orange-foreground shadow-orange">
+          <a href="https://apoioaospais.com.br/login.php" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-orange px-7 py-3.5 font-bold text-orange-foreground shadow-orange">
             Acessar ACADESC <ArrowRight className="h-4 w-4" />
           </a>
         </div>
