@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import { CheckCircle2, Clock, Users, ArrowRight } from "lucide-react";
+import { CheckCircle2, Clock, ArrowRight } from "lucide-react";
 import HERO_IMG from "@/assets/level-fund2.jpg";
 
 export const Route = createFileRoute("/ensino/fundamental-ii")({
@@ -26,12 +26,7 @@ function Page() {
           <div>
             <h2 className="font-display text-3xl font-bold text-primary">Metodologia</h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">Aprofundamos as áreas do conhecimento e desenvolvemos hábitos de estudo que farão a diferença no Ensino Médio.</p>
-            <div className="mt-6 grid grid-cols-2 gap-4">
-              <div className="rounded-2xl bg-muted p-5">
-                <Users className="h-5 w-5 text-orange" />
-                <p className="mt-2 text-xs uppercase tracking-widest text-muted-foreground">Faixa etária</p>
-                <p className="font-display text-lg font-bold text-primary">11 a 14 anos</p>
-              </div>
+            <div className="mt-6 grid grid-cols-1 gap-4">
               <div className="rounded-2xl bg-muted p-5">
                 <Clock className="h-5 w-5 text-green" />
                 <p className="mt-2 text-xs uppercase tracking-widest text-muted-foreground">Período</p>
