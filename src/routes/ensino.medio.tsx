@@ -26,12 +26,7 @@ function Page() {
           <div>
             <h2 className="font-display text-3xl font-bold text-primary">Metodologia</h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">Estrutura sólida com simulados nacionais COC, plantões de dúvidas e orientação vocacional.</p>
-            <div className="mt-6 grid grid-cols-2 gap-4">
-              <div className="rounded-2xl bg-muted p-5">
-                <Users className="h-5 w-5 text-orange" />
-                <p className="mt-2 text-xs uppercase tracking-widest text-muted-foreground">Faixa etária</p>
-                <p className="font-display text-lg font-bold text-primary">15 a 17 anos</p>
-              </div>
+            <div className="mt-6 grid grid-cols-1 gap-4">
               <div className="rounded-2xl bg-muted p-5">
                 <Clock className="h-5 w-5 text-green" />
                 <p className="mt-2 text-xs uppercase tracking-widest text-muted-foreground">Período</p>
