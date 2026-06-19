@@ -25,7 +25,7 @@ function Page() {
               { icon: MapPin, t: "Endereço", b: "Rua Américo Basseto, 265 — Jardim Mauá — Mauá/SP — CEP 09340-210" },
               { icon: Phone, t: "Telefones", b: "(11) 4576-5291 · (11) 94730-5935" },
               { icon: Mail, t: "E-mail", b: "secretaria@colegiors.com.br" },
-              { icon: Clock, t: "Atendimento", b: "Segunda a Sexta — 7h às 18h" },
+              { icon: Clock, t: "Atendimento", b: "Segunda a Sexta — 7h às 17h" },
             ].map((c) => {
               const Icon = c.icon;
               return (
