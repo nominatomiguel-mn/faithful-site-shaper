@@ -9,6 +9,9 @@ import spClass from "@/assets/space-classroom.jpg";
 import spPatio from "@/assets/space-patio.jpg";
 import spLeitura from "@/assets/space-leitura.jpg";
 import spRobotica from "@/assets/space-robotica.jpg";
+import sala1 from "@/assets/sala-aula-1.jpg.asset.json";
+import sala2 from "@/assets/sala-aula-2.jpg.asset.json";
+import sala3 from "@/assets/sala-aula-3.jpg.asset.json";
 
 export const Route = createFileRoute("/espaco")({
   head: () => ({
@@ -33,6 +36,9 @@ const ITEMS = [
   { img: spPatio, l: "Pátio" },
   { img: spLeitura, l: "Sala de leitura" },
   { img: spRobotica, l: "Robótica" },
+  { img: sala1.url, l: "Sala de aula" },
+  { img: sala2.url, l: "Sala de aula" },
+  { img: sala3.url, l: "Sala de aula" },
 ];
 
 function Page() {
