@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import { CheckCircle2, Clock, Users, ArrowRight } from "lucide-react";
+import { CheckCircle2, Clock, ArrowRight } from "lucide-react";
 import HERO_IMG from "@/assets/level-fund1.jpg";
 
 export const Route = createFileRoute("/ensino/fundamental-i")({
