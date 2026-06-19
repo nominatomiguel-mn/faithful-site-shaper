@@ -7,10 +7,12 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 
 function NotFoundComponent() {
   return (
@@ -37,9 +39,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -77,19 +76,40 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Colégio RS — Educando a futura geração em Mauá/SP" },
+      {
+        name: "description",
+        content:
+          "Colégio RS — Educação Infantil ao Ensino Médio em Mauá/SP, com sistema de ensino COC. Tradição, cuidado e excelência acadêmica.",
+      },
+      { name: "author", content: "Colégio RS" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Colégio RS — Educando a futura geração em Mauá/SP" },
+      { name: "twitter:title", content: "Colégio RS — Educando a futura geração em Mauá/SP" },
+      { name: "description", content: "RS Inspire Hub is a modern, professional website for Colégio RS, offering a welcoming online presence for prospective students and parents." },
+      { property: "og:description", content: "RS Inspire Hub is a modern, professional website for Colégio RS, offering a welcoming online presence for prospective students and parents." },
+      { name: "twitter:description", content: "RS Inspire Hub is a modern, professional website for Colégio RS, offering a welcoming online presence for prospective students and parents." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b8802a07-6f7b-4500-af26-6574f7d4083d/id-preview-5a6a9e66--9650fa24-b226-476c-a257-991abe1dcc55.lovable.app-1778519534888.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b8802a07-6f7b-4500-af26-6574f7d4083d/id-preview-5a6a9e66--9650fa24-b226-476c-a257-991abe1dcc55.lovable.app-1778519534888.png" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@500;700&display=swap",
       },
     ],
   }),
@@ -99,7 +119,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
-function RootShell({ children }: { children: ReactNode }) {
+function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -116,10 +136,72 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const tag = () => {
+      document
+        .querySelectorAll<HTMLElement>("main section:not([data-reveal])")
+        .forEach((el) => el.setAttribute("data-reveal", ""));
+      // Stagger reveal for common grid children inside any tagged section
+      document
+        .querySelectorAll<HTMLElement>(
+          "main section [data-stagger] > *:not([data-reveal])",
+        )
+        .forEach((el, i) => {
+          el.setAttribute("data-reveal", "");
+          el.setAttribute("data-delay", String((i % 6) + 1));
+        });
+      // Auto-stagger direct children of grids/flex rows of cards
+      document
+        .querySelectorAll<HTMLElement>(
+          "main section .grid > .rounded-3xl:not([data-reveal]), main section .grid > article:not([data-reveal]), main section .grid > .card:not([data-reveal])",
+        )
+        .forEach((el, i) => {
+          el.setAttribute("data-reveal", "");
+          el.setAttribute("data-delay", String((i % 6) + 1));
+        });
+    };
+    tag();
+    if (reduce) {
+      document
+        .querySelectorAll<HTMLElement>("[data-reveal]")
+        .forEach((el) => el.classList.add("is-visible"));
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-visible");
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+    );
+    document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((el) => io.observe(el));
+    const mo = new MutationObserver(() => {
+      tag();
+      document
+        .querySelectorAll<HTMLElement>("[data-reveal]:not(.is-visible)")
+        .forEach((el) => io.observe(el));
+    });
+    mo.observe(document.body, { childList: true, subtree: true });
+    return () => {
+      io.disconnect();
+      mo.disconnect();
+    };
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <SiteHeader />
+      <main className="min-h-screen">
+        <Outlet />
+      </main>
+      <SiteFooter />
+      <WhatsAppFloat />
     </QueryClientProvider>
   );
 }
