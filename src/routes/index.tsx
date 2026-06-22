@@ -524,7 +524,6 @@ function Home() {
                     <span className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest ${n.color}`}>
                       {n.cat}
                     </span>
-                    <span className="text-xs text-muted-foreground">{n.date}</span>
                   </div>
                   <h3 className="mt-3 font-display text-lg font-bold text-primary leading-snug">
                     {n.title}
