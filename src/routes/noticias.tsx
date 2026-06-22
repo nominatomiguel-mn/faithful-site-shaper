@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import spCourt from "@/assets/space-courtyard.jpg";
-import spClass from "@/assets/space-classroom.jpg";
 import spLab from "@/assets/space-lab.jpg";
-import spLib from "@/assets/space-library.jpg";
+import oba from "@/assets/oba-astronomia.jpg.asset.json";
 
 export const Route = createFileRoute("/noticias")({
   head: () => ({
@@ -18,10 +17,9 @@ export const Route = createFileRoute("/noticias")({
 });
 
 const NEWS = [
-  { cat: "Eventos", color: "bg-coral text-coral-foreground", date: "12 Mar 2026", title: "Festa da Família 2026", img: spCourt, body: "Uma manhã para celebrar nossa comunidade." },
-  { cat: "Pedagógico", color: "bg-green text-green-foreground", date: "28 Fev 2026", title: "Olimpíada de Matemática: 7 medalhas", img: spClass, body: "Resultados de orgulho para todos nós." },
-  { cat: "COC", color: "bg-sky text-sky-foreground", date: "10 Fev 2026", title: "Novo simulado nacional COC", img: spLab, body: "Reforça preparação para o ENEM." },
-  { cat: "Cultura", color: "bg-yellow text-yellow-foreground", date: "01 Fev 2026", title: "Sarau literário do Fundamental II", img: spLib, body: "Alunos celebram a leitura." },
+  { cat: "Eventos", color: "bg-coral text-coral-foreground", title: "Festa da Família 2026", img: spCourt, body: "Uma manhã para celebrar nossa comunidade." },
+  { cat: "Pedagógico", color: "bg-green text-green-foreground", title: "OBA — Olimpíada Brasileira de Astronomia", img: oba.url, body: "Nossos alunos brilharam na prova de astronomia e conquistaram certificados e medalhas." },
+  { cat: "COC", color: "bg-sky text-sky-foreground", title: "Novo simulado nacional COC", img: spLab, body: "Reforça preparação para o ENEM." },
 ];
 
 function Page() {
@@ -36,7 +34,6 @@ function Page() {
               <div className="p-6">
                 <div className="flex items-center gap-2">
                   <span className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest ${n.color}`}>{n.cat}</span>
-                  <span className="text-xs text-muted-foreground">{n.date}</span>
                 </div>
                 <h3 className="mt-3 font-display text-lg font-bold text-primary leading-snug">{n.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{n.body}</p>
