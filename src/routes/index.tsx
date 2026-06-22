@@ -429,7 +429,6 @@ function Home() {
               { img: spClass, label: "Salas modernas" },
               { img: spLab, label: "Laboratório" },
               { img: spPlay, label: "Parque" },
-              { img: spCourt, label: "Refeitório 2" },
               { img: spCaf, label: "Refeitório" },
               { img: spLeitura, label: "Sala de leitura" },
               { img: spRobotica, label: "Robótica" },
