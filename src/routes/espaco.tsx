@@ -50,10 +50,10 @@ const ROBOTICA_GALLERY = [
 const ITEMS: Item[] = [
   { img: spLib, l: "Quadra" },
   { img: spClass, l: "Salas modernas", gallery: SALAS_GALLERY },
-  { img: spLab, l: "Laboratório de informática" },
+  { img: spLab, l: "Laboratório\u00a0" },
   { img: spCourt, l: "Refeitório 2" },
   { img: spCaf, l: "Refeitório" },
-  { img: spPlay, l: "Parquinho" },
+  { img: spPlay, l: "Parque" },
   { img: spPatio, l: "Pátio" },
   { img: spLeitura, l: "Sala de leitura" },
   { img: spRobotica, l: "Robótica", gallery: ROBOTICA_GALLERY },
