@@ -15,7 +15,7 @@ export const Route = createFileRoute("/a-escola")({
 });
 
 const TIMELINE = [
-  { year: "1996", text: "Fundação do Colégio RS em Mauá, com foco em Educação Infantil." },
+  { year: "1996", text: "Fundação do Colégio RS em Mauá,por Danielle e Cristiane." },
   { year: "2001", text: "Expansão para Ensino Fundamental I e II." },
   { year: "2008", text: "Início da parceria com o sistema de ensino COC." },
   { year: "2010", text: "Implantação do Ensino Médio com foco em ENEM." },
