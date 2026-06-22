@@ -82,7 +82,7 @@ function Page() {
               >
                 <img src={g.img} alt={g.l} loading="lazy" width={1024} height={768} className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <figcaption className="bg-card p-5 font-display text-lg font-bold text-primary flex items-center justify-between">
-                  <span>{g.l}</span>
+                  <span className="whitespace-pre-wrap">{g.l}</span>
                   {clickable && <span className="text-xs font-medium text-muted-foreground">Ver galeria →</span>}
                 </figcaption>
               </Tag>
