@@ -30,6 +30,7 @@ import spCourt from "@/assets/space-courtyard.jpg";
 import spClass from "@/assets/space-classroom.jpg";
 import spLeitura from "@/assets/space-leitura.jpg";
 import spRobotica from "@/assets/space-robotica.jpg";
+import oba from "@/assets/oba-astronomia.jpg.asset.json";
 import { DecorCircles } from "@/components/site/DecorCircles";
 import { RainbowDivider } from "@/components/site/RainbowDivider";
 
@@ -168,22 +169,19 @@ const NEWS = [
   {
     cat: "Eventos",
     color: "bg-coral text-coral-foreground",
-    date: "12 Mar 2026",
-    title: "Festa da Família 2026: uma manhã para celebrar juntos",
+    title: "Festa da Família 2026",
     img: spCourt,
   },
   {
     cat: "Pedagógico",
     color: "bg-green text-green-foreground",
-    date: "28 Fev 2026",
-    title: "Olimpíada de Matemática: Colégio RS leva 7 medalhas",
-    img: spClass,
+    title: "OBA — Olimpíada Brasileira de Astronomia",
+    img: oba.url,
   },
   {
     cat: "COC",
     color: "bg-sky text-sky-foreground",
-    date: "10 Fev 2026",
-    title: "Novo simulado nacional COC reforça preparação para o ENEM",
+    title: "Novo simulado nacional COC",
     img: spLab,
   },
 ];
@@ -526,7 +524,6 @@ function Home() {
                     <span className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest ${n.color}`}>
                       {n.cat}
                     </span>
-                    <span className="text-xs text-muted-foreground">{n.date}</span>
                   </div>
                   <h3 className="mt-3 font-display text-lg font-bold text-primary leading-snug">
                     {n.title}
