@@ -428,7 +428,7 @@ function Home() {
               { img: spLib, label: "Quadra" },
               { img: spClass, label: "Salas modernas" },
               { img: spLab, label: "Laboratório" },
-              { img: spPlay, label: "Parquinho" },
+              { img: spPlay, label: "Parque" },
               { img: spCourt, label: "Refeitório 2" },
               { img: spCaf, label: "Refeitório" },
               { img: spLeitura, label: "Sala de leitura" },
