@@ -2,7 +2,7 @@ import { useState, FormEvent, ChangeEvent } from "react";
 import { Paperclip, Send, FileText } from "lucide-react";
 import { z } from "zod";
 
-const WHATS = "5511947305935";
+const EMAIL = "secretaria@colegiors.com.br";
 
 const schema = z.object({
   nome: z.string().trim().min(2, "Informe seu nome").max(80),
@@ -43,15 +43,16 @@ export function CurriculoForm() {
     }
     setSending(true);
     const { nome, email, telefone, mensagem } = parsed.data;
-    const texto =
+    const assunto = `Currículo — ${nome}`;
+    const corpo =
       `Olá! Gostaria de enviar meu currículo.\n\n` +
       `Nome: ${nome}\n` +
       `E-mail: ${email}\n` +
       `Telefone: ${telefone}\n` +
-      (mensagem ? `Mensagem: ${mensagem}\n` : "") +
-      (file ? `\nArquivo: ${file.name} (anexarei nesta conversa)` : "");
-    const url = `https://wa.me/${WHATS}?text=${encodeURIComponent(texto)}`;
-    window.open(url, "_blank", "noopener,noreferrer");
+      (mensagem ? `\nMensagem: ${mensagem}\n` : "") +
+      (file ? `\nArquivo: ${file.name} (anexe este arquivo ao e-mail antes de enviar)` : "\nLembre-se de anexar o currículo a este e-mail.");
+    const url = `mailto:${EMAIL}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+    window.location.href = url;
     setTimeout(() => setSending(false), 800);
   }
 
@@ -117,7 +118,7 @@ export function CurriculoForm() {
       </div>
       {erro && <p className="mt-3 text-sm text-destructive">{erro}</p>}
       <p className="mt-3 text-xs text-muted-foreground">
-        Ao enviar, você será encaminhado ao WhatsApp do colégio para anexar o arquivo.
+        Ao enviar, seu cliente de e-mail abrirá com a mensagem pronta para {EMAIL}. Anexe o currículo antes de enviar.
       </p>
       <button
         type="submit"
