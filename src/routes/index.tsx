@@ -429,7 +429,7 @@ function Home() {
               { img: spClass, label: "Salas modernas" },
               { img: spLab, label: "Laboratório" },
               { img: spPlay, label: "Parque" },
-              { img: spCaf, label: "Refeitório" },
+              { img: spCaf, label: "Refeitórios\n\n" },
               { img: spLeitura, label: "Sala de leitura" },
               { img: spRobotica, label: "Robótica" },
             ].map((g) => (
@@ -446,7 +446,7 @@ function Home() {
                   className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary-deep/90 to-transparent p-5">
-                  <span className="font-display text-lg font-bold text-white">{g.label}</span>
+                  <span className="font-display text-lg font-bold text-white whitespace-pre-wrap">{g.label}</span>
                 </figcaption>
               </figure>
             ))}

@@ -56,7 +56,7 @@ const ITEMS: Item[] = [
   { img: spLib, l: "Quadra" },
   { img: spClass, l: "Salas modernas", gallery: SALAS_GALLERY },
   { img: spLab, l: "Laboratório\u00a0" },
-  { img: spCaf, l: "Refeitório", gallery: REFEITORIO_GALLERY },
+  { img: spCaf, l: "Refeitórios\n\n", gallery: REFEITORIO_GALLERY },
   { img: spPlay, l: "Parque" },
   { img: spPatio, l: "Pátio" },
   { img: spLeitura, l: "Sala de leitura" },
@@ -82,7 +82,7 @@ function Page() {
               >
                 <img src={g.img} alt={g.l} loading="lazy" width={1024} height={768} className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <figcaption className="bg-card p-5 font-display text-lg font-bold text-primary flex items-center justify-between">
-                  <span>{g.l}</span>
+                  <span className="whitespace-pre-wrap">{g.l}</span>
                   {clickable && <span className="text-xs font-medium text-muted-foreground">Ver galeria →</span>}
                 </figcaption>
               </Tag>
@@ -104,7 +104,7 @@ function Page() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="font-display text-2xl font-bold text-primary">{open.l}</h2>
+              <h2 className="font-display text-2xl font-bold text-primary whitespace-pre-wrap">{open.l}</h2>
               <button
                 type="button"
                 onClick={() => setOpen(null)}
