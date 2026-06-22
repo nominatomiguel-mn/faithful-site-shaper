@@ -118,7 +118,7 @@ export function CurriculoForm() {
       </div>
       {erro && <p className="mt-3 text-sm text-destructive">{erro}</p>}
       <p className="mt-3 text-xs text-muted-foreground">
-        Ao enviar, você será encaminhado ao WhatsApp do colégio para anexar o arquivo.
+        Ao enviar, seu cliente de e-mail abrirá com a mensagem pronta para {EMAIL}. Anexe o currículo antes de enviar.
       </p>
       <button
         type="submit"
