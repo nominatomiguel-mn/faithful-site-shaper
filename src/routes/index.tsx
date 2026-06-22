@@ -429,7 +429,7 @@ function Home() {
               { img: spClass, label: "Salas modernas" },
               { img: spLab, label: "Laboratório" },
               { img: spPlay, label: "Parque" },
-              { img: spCaf, label: "Refeitório" },
+              { img: spCaf, label: "Refeitórios\n\n" },
               { img: spLeitura, label: "Sala de leitura" },
               { img: spRobotica, label: "Robótica" },
             ].map((g) => (

@@ -56,7 +56,7 @@ const ITEMS: Item[] = [
   { img: spLib, l: "Quadra" },
   { img: spClass, l: "Salas modernas", gallery: SALAS_GALLERY },
   { img: spLab, l: "Laboratório\u00a0" },
-  { img: spCaf, l: "Refeitório", gallery: REFEITORIO_GALLERY },
+  { img: spCaf, l: "Refeitórios\n\n", gallery: REFEITORIO_GALLERY },
   { img: spPlay, l: "Parque" },
   { img: spPatio, l: "Pátio" },
   { img: spLeitura, l: "Sala de leitura" },
