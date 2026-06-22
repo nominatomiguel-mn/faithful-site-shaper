@@ -169,22 +169,19 @@ const NEWS = [
   {
     cat: "Eventos",
     color: "bg-coral text-coral-foreground",
-    date: "12 Mar 2026",
-    title: "Festa da Família 2026: uma manhã para celebrar juntos",
+    title: "Festa da Família 2026",
     img: spCourt,
   },
   {
     cat: "Pedagógico",
     color: "bg-green text-green-foreground",
-    date: "28 Fev 2026",
-    title: "Olimpíada de Matemática: Colégio RS leva 7 medalhas",
-    img: spClass,
+    title: "OBA — Olimpíada Brasileira de Astronomia",
+    img: oba.url,
   },
   {
     cat: "COC",
     color: "bg-sky text-sky-foreground",
-    date: "10 Fev 2026",
-    title: "Novo simulado nacional COC reforça preparação para o ENEM",
+    title: "Novo simulado nacional COC",
     img: spLab,
   },
 ];
