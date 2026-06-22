@@ -30,6 +30,7 @@ import spCourt from "@/assets/space-courtyard.jpg";
 import spClass from "@/assets/space-classroom.jpg";
 import spLeitura from "@/assets/space-leitura.jpg";
 import spRobotica from "@/assets/space-robotica.jpg";
+import oba from "@/assets/oba-astronomia.jpg.asset.json";
 import { DecorCircles } from "@/components/site/DecorCircles";
 import { RainbowDivider } from "@/components/site/RainbowDivider";
 
