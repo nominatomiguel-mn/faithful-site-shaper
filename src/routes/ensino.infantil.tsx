@@ -19,7 +19,7 @@ export const Route = createFileRoute("/ensino/infantil")({
 function Page() {
   return (
     <>
-      <PageHero eyebrow="Ensino" title="Educação Infantil" subtitle="Acolhimento, ludicidade e descobertas a partir dos 4 anos." tone="green" />
+      <PageHero eyebrow="Ensino" title="Educação Infantil" subtitle="Acolhimento, ludicidade e descobertas APARTIR DOS 4 ANOS." tone="green" />
       <section className="bg-background py-20">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-2 md:px-10">
           <img src={HERO_IMG} alt="Educação Infantil" loading="lazy" width={1024} height={768} className="aspect-[4/3] w-full rounded-3xl object-cover shadow-soft" />
@@ -30,7 +30,7 @@ function Page() {
               <div className="rounded-2xl bg-muted p-5">
                 <Users className="h-5 w-5 text-orange" />
                 <p className="mt-2 text-xs uppercase tracking-widest text-muted-foreground">Faixa etária</p>
-                <p className="font-display text-lg font-bold text-primary">A partir de 4 anos</p>
+                <p className="font-display text-lg font-bold text-primary">APARTIR DOS 4 ANOS</p>
               </div>
               <div className="rounded-2xl bg-muted p-5">
                 <Clock className="h-5 w-5 text-green" />
