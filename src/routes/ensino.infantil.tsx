@@ -30,7 +30,7 @@ function Page() {
               <div className="rounded-2xl bg-muted p-5">
                 <Users className="h-5 w-5 text-orange" />
                 <p className="mt-2 text-xs uppercase tracking-widest text-muted-foreground">Faixa etária</p>
-                <p className="font-display text-lg font-bold text-primary">A partir de 4 anos</p>
+                <p className="font-display text-lg font-bold text-primary">APARTIR DOS 4 ANOS</p>
               </div>
               <div className="rounded-2xl bg-muted p-5">
                 <Clock className="h-5 w-5 text-green" />
