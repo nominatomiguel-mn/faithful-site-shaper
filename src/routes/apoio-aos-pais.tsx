@@ -38,10 +38,24 @@ function Page() {
             );
           })}
         </div>
-        <div className="mt-12 text-center">
+        <div className="mt-12 flex flex-col items-center gap-4">
           <a href="https://apoioaospais.com.br/login.php" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-orange px-7 py-3.5 font-bold text-orange-foreground shadow-orange">
             Acessar ACADESC <ArrowRight className="h-4 w-4" />
           </a>
+          <a href="https://play.google.com/store/apps/details?id=acadesc.com.br.acadesc&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border-2 border-orange px-7 py-3 font-bold text-orange hover:bg-orange hover:text-orange-foreground transition-colors">
+            Baixar app ACADESC <ArrowRight className="h-4 w-4" />
+          </a>
+        </div>
+        <div className="mt-16 mx-auto max-w-3xl px-6">
+          <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-lg">
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/KJI-nZVWong?start=84"
+              title="Vídeo ACADESC"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </div>
       </section>
     </>
