@@ -105,7 +105,7 @@ const LEVELS = [
   {
     to: "/ensino/infantil",
     title: "Educação Infantil",
-    age: "A PARTIR DOS 4",
+    age: "APARTIR DOS 4 ANOS",
     img: lvlInfantil,
     color: "bg-green",
     border: "border-green",
