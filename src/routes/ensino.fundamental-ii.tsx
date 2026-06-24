@@ -25,7 +25,11 @@ function Page() {
           <img src={HERO_IMG} alt="Fundamental II" loading="lazy" width={1024} height={768} className="aspect-[4/3] w-full rounded-3xl object-cover shadow-soft" />
           <div>
             <h2 className="font-display text-3xl font-bold text-primary">Metodologia</h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed whitespace-pre-line">{"Preparamos nossos alunos para os desafios do Ensino Médio por meio do aprofundamento das áreas do conhecimento, da participação em Olimpíadas, dos simulados COC e do desenvolvimento de hábitos de estudo que fortalecem a autonomia, a confiança e o protagonismo na aprendizagem.\\n\\n"}</p>
+            <p className="mt-4 text-muted-foreground leading-relaxed whitespace-pre-line">
+              {`Preparamos nossos alunos para os desafios do Ensino Médio por meio do aprofundamento das áreas do conhecimento, da participação em Olimpíadas, dos simulados COC e do desenvolvimento de hábitos de estudo que fortalecem a autonomia, a confiança e o protagonismo na aprendizagem.
+
+`}
+            </p>
             <div className="mt-6 grid grid-cols-1 gap-4">
               <div className="rounded-2xl bg-muted p-5">
                 <Clock className="h-5 w-5 text-green" />
