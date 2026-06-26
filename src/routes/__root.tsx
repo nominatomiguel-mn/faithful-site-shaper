@@ -174,6 +174,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <HeadContent />
       <SiteHeader />
       <main className="min-h-screen">
         <Outlet />
