@@ -25,5 +25,5 @@ jobs:
           host: ${{ ftp.colegiors.com.br }}
           user: ${{ colegiors1 }}
           password: ${{ Cris@16102004c }}
-          localDir: "html-version"
+          localDir: "html.version"
 remoteDir: "/"
