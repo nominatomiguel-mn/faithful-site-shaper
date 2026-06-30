@@ -1,0 +1,65 @@
+# Colégio RS — Versão HTML / CSS / JS / PHP
+
+Esta pasta contém uma versão paralela do site, escrita em **PHP estático**, pronta para
+ser enviada para qualquer hospedagem compartilhada (Locaweb, Hostgator, KingHost, etc.)
+com suporte a **PHP 7.4+**. A versão React/Vite original continua funcionando normalmente
+em `src/`.
+
+## Como publicar
+
+1. Faça upload do **conteúdo** desta pasta (`html.version/`) para a raiz do site
+   (geralmente `public_html/` ou `www/`) via FTP/cPanel.
+2. Garanta que a pasta `uploads/` exista e tenha permissão de escrita (`chmod 755` ou `775`).
+3. Acesse `https://seudominio.com.br/` — o `.htaccess` direciona automaticamente para
+   `index.php` e força UTF-8 + cache de assets.
+
+## Estrutura
+
+```
+html.version/
+├── .htaccess                  Apache (rewrite + cache + 404)
+├── index.php                  Home
+├── a-escola.php
+├── espaco.php                 com lightbox de galerias
+├── coc.php
+├── apoio-aos-pais.php
+├── noticias.php
+├── contato.php                + enviar-contato.php
+├── matricula.php              + enviar-matricula.php
+├── enviar-curriculo.php       upload de PDF
+├── ensino/
+│   ├── index.php
+│   ├── infantil.php
+│   ├── fundamental-i.php
+│   ├── fundamental-ii.php
+│   └── medio.php
+├── includes/
+│   ├── head.php               <head> + Tailwind CDN + tokens
+│   ├── header.php             Cabeçalho fixo + menu mobile + dropdown
+│   ├── footer.php             Rodapé + botão WhatsApp flutuante
+│   └── hero.php               render_page_hero() reutilizável
+├── assets/
+│   ├── css/style.css          Tokens, animações e estilos custom
+│   ├── js/main.js             Scroll, menu, dropdown, lightbox, reveal
+│   └── img/                   Todas as imagens locais (jpg)
+└── uploads/                   Logs e currículos recebidos (criar c/ permissão)
+```
+
+## Formulários (PHP `mail()`)
+
+Os formulários enviam para `secretaria@colegiors.com.br` via função `mail()` do PHP
+e gravam um log em `uploads/*.log`. A maioria das hospedagens brasileiras
+(Locaweb inclusive) já aceita `mail()` por padrão. Para garantir entregabilidade
+recomenda-se trocar por SMTP autenticado (PHPMailer) — basta editar os arquivos
+`enviar-*.php`.
+
+## Tecnologia
+
+- **Tailwind CSS via CDN** (`cdn.tailwindcss.com`) com tokens customizados injetados
+  no `head.php` para reproduzir as cores e tipografia da versão React.
+- **JS puro** (sem build) — menu mobile, dropdown, lightbox e scroll reveal.
+- **PHP** apenas para incluir cabeçalho/rodapé e processar formulários.
+
+Nenhum banco de dados é necessário.
+</content>
+</invoke>
