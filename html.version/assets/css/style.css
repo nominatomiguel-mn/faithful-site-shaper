@@ -1,0 +1,68 @@
+/* ====== Colégio RS — tokens, animações e utilitários custom ====== */
+:root{
+  --primary:#1B2A5E;
+  --primary-deep:#141F44;
+  --orange:#F28C28;
+  --coral:#E94B4B;
+  --yellow:#F4C430;
+  --green:#5BB85B;
+  --sky:#3BA9D6;
+  --bg:#ffffff;
+  --muted:#F8F9FB;
+  --muted-foreground:#5A6478;
+  --border:#E5E7EB;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans','Inter',system-ui,sans-serif;color:var(--primary);background:var(--bg);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;letter-spacing:-.01em}
+.font-display{font-family:'Playfair Display',Georgia,serif}
+.font-hand{font-family:'Caveat',cursive}
+
+/* Sombras coloridas */
+.shadow-soft{box-shadow:0 12px 30px -16px rgba(27,42,94,.30)}
+.shadow-orange{box-shadow:0 18px 40px -16px rgba(242,140,40,.50)}
+.shadow-coral{box-shadow:0 18px 40px -16px rgba(233,75,75,.45)}
+.shadow-green{box-shadow:0 18px 40px -16px rgba(91,184,91,.45)}
+.shadow-yellow{box-shadow:0 18px 40px -16px rgba(244,196,48,.50)}
+
+/* Gradiente arco-íris */
+.gradient-rainbow{background:linear-gradient(90deg,var(--yellow) 0%,var(--orange) 33%,var(--coral) 66%,var(--green) 100%)}
+
+.text-balance{text-wrap:balance}
+
+/* Animações */
+@keyframes ken-burns{0%{transform:scale(1)}100%{transform:scale(1.08) translateX(-1%)}}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse-soft{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+@keyframes float{0%,100%{transform:translateY(0) translateX(0)}50%{transform:translateY(-20px) translateX(8px)}}
+.animate-ken-burns{animation:ken-burns 20s ease-out infinite alternate}
+.animate-rise{animation:rise .7s cubic-bezier(.22,1,.36,1) both}
+.animate-pulse-soft{animation:pulse-soft 3s ease-in-out infinite}
+.animate-float{animation:float 8s ease-in-out infinite}
+
+/* Scroll reveal */
+@media (prefers-reduced-motion:no-preference){
+  [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+  [data-reveal].is-visible{opacity:1;transform:translateY(0)}
+}
+
+/* Esconder badge Lovable, se herdada */
+a[href*="lovable.dev"],iframe[src*="lovable.dev"],.lovable-badge{display:none!important}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;padding:1rem}
+.lightbox.open{display:flex}
+.lightbox-content{background:#fff;border-radius:1.5rem;max-height:90vh;max-width:64rem;width:100%;overflow:auto;padding:1.5rem}
+
+/* Dropdown */
+.dropdown{position:relative}
+.dropdown-menu{position:absolute;left:0;top:100%;margin-top:.5rem;min-width:14rem;background:#fff;border:1px solid var(--border);border-radius:1rem;padding:.5rem;box-shadow:0 12px 30px -16px rgba(27,42,94,.3);display:none;z-index:50}
+.dropdown.open .dropdown-menu{display:block}
+.dropdown-menu a{display:block;padding:.5rem .75rem;border-radius:.5rem;color:var(--primary);font-size:.875rem}
+.dropdown-menu a:hover{background:var(--muted)}
+
+/* Mobile menu */
+.mobile-menu{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.4);display:none}
+.mobile-menu.open{display:block}
+.mobile-menu-panel{position:absolute;right:0;top:0;height:100%;width:88%;max-width:24rem;background:#fff;padding:1.5rem;overflow-y:auto}
