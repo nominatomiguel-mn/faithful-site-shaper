@@ -17,8 +17,8 @@ $ENSINO = [
 ?>
 <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
   <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-8 md:py-4">
-    <a href="/" class="flex items-center gap-2">
-      <img src="/assets/img/hero-facade.jpg" onerror="this.style.display='none'" alt="" class="hidden">
+    <a href="/" class="flex items-center gap-3">
+      <img src="/assets/img/logo.jpg" alt="Colégio RS" class="h-12 w-12 rounded-full object-cover bg-white ring-2 ring-orange/30 shadow-soft">
       <span class="font-display text-2xl font-extrabold text-primary">Colégio <span class="text-orange">RS</span></span>
     </a>
     <nav class="hidden lg:flex items-center gap-1 text-sm font-semibold text-primary">
