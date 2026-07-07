@@ -30,7 +30,7 @@ import spCourt from "@/assets/space-courtyard.jpg";
 import spClass from "@/assets/space-classroom.jpg";
 import spLeitura from "@/assets/space-leitura.jpg";
 import spRobotica from "@/assets/space-robotica.jpg";
-import oba from "@/assets/oba-astronomia.jpg.asset.json";
+import oba from "@/assets/oba.jpeg";
 import { DecorCircles } from "@/components/site/DecorCircles";
 import { RainbowDivider } from "@/components/site/RainbowDivider";
 
@@ -176,7 +176,7 @@ const NEWS = [
     cat: "Pedagógico",
     color: "bg-green text-green-foreground",
     title: "OBA — Olimpíada Brasileira de Astronomia",
-    img: oba.url,
+    img: oba,
   },
   {
     cat: "COC",
