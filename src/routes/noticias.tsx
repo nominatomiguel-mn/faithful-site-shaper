@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import spCourt from "@/assets/space-courtyard.jpg";
 import spLab from "@/assets/space-lab.jpg";
-import oba from "@/assets/oba-astronomia.jpg.asset.json";
+import oba from "@/assets/oba.jpeg";
 
 export const Route = createFileRoute("/noticias")({
   head: () => ({
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/noticias")({
 
 const NEWS = [
   { cat: "Eventos", color: "bg-coral text-coral-foreground", title: "Festa da Família 2026", img: spCourt, body: "Uma manhã para celebrar nossa comunidade." },
-  { cat: "Pedagógico", color: "bg-green text-green-foreground", title: "OBA — Olimpíada Brasileira de Astronomia", img: oba.url, body: "Nossos alunos brilharam na prova de astronomia e conquistaram certificados e medalhas." },
+  { cat: "Pedagógico", color: "bg-green text-green-foreground", title: "OBA — Olimpíada Brasileira de Astronomia", img: oba, body: "Nossos alunos brilharam na prova de astronomia e conquistaram certificados e medalhas." },
   { cat: "COC", color: "bg-sky text-sky-foreground", title: "Novo simulado nacional COC", img: spLab, body: "Reforça preparação para o ENEM." },
 ];
 

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/colegio-rs-logo.png.asset.json";
+import logo from "@/assets/logo.jpeg";
 
 export function Logo({ className = "" }: { className?: string }) {
   return (
@@ -9,7 +9,7 @@ export function Logo({ className = "" }: { className?: string }) {
       aria-label="Colégio RS — página inicial"
     >
       <img
-        src={logo.url}
+        src={logo}
         alt="Colégio RS"
         className="h-12 w-12 rounded-full object-cover bg-white ring-2 ring-orange/30 shadow-soft"
       />
