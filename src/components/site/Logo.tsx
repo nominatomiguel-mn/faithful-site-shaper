@@ -5,13 +5,13 @@ export function Logo({ className = "" }: { className?: string }) {
   return (
     <Link
       to="/"
-      className={`group inline-flex items-center gap-3 ${className}`}
+      className={`inline-flex items-center gap-3 ${className}`}
       aria-label="Colégio RS — página inicial"
     >
       <img
         src={logo.url}
         alt="Colégio RS"
-        className="h-12 w-12 rounded-xl object-contain bg-white p-1 ring-2 ring-orange/30 shadow-soft transition-transform duration-500 group-hover:scale-105"
+        className="h-12 w-12 rounded-full object-cover bg-white ring-2 ring-orange/30 shadow-soft"
       />
       <span className="sr-only">Colégio RS — Mauá · SP</span>
     </Link>
